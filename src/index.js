@@ -13,6 +13,10 @@ connectDB();
 dotenv.config();
 const app = express();
 
+const allowedOrigins = [
+  'http://localhost:3000', 
+  'https://mundo-al-96vi888nk-benjahoffs-projects.vercel.app'
+];
 const swaggerOptions = {
   swaggerDefinition: {
     openapi: '3.0.0',
@@ -51,7 +55,9 @@ const swaggerDocs = swaggerJSDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use(
-  cors()
+  cors({
+    origin: allowedOrigins
+  })
 );
 
 app.use(express.json());
