@@ -25,7 +25,7 @@ const swaggerOptions = {
       },
       servers: [
         {
-          url: 'http://localhost:4000',
+          url: 'https://news-api-umber.vercel.app/',
         },
       ],
     },
@@ -51,10 +51,7 @@ const swaggerDocs = swaggerJSDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
+  cors()
 );
 
 app.use(express.json());
