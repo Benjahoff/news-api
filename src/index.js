@@ -15,7 +15,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000', 
-  'https://mundo-al-96vi888nk-benjahoffs-projects.vercel.app'
+  'https://news-api-umber.vercel.app'
 ];
 const swaggerOptions = {
   swaggerDefinition: {
